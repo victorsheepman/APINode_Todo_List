@@ -13,9 +13,11 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }))
 app.use(cors())
-
 app.use('/api/1.0', require('./app/routes'))
 app.use(unknownEndpoint)
+app.use('/', (req, res)=>{
+	res.send('hello world')
+})
 dbConect().then(()=>console.log('holaDB')).catch(err=>console.log(err))
 app.listen(PORT, '0.0.0.0', ()=>{
 	console.log('Api lista')
