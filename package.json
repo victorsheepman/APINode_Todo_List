@@ -9,5 +9,25 @@
   },
   "devDependencies": {
     "eslint": "^8.41.0"
-  }
+  },
+  "name": "todo-list-back-2.0",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon app.js",
+    "start":"node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorsheepman/APINode_Todo_List.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorsheepman/APINode_Todo_List/issues"
+  },
+  "homepage": "https://github.com/victorsheepman/APINode_Todo_List#readme",
+  "description": ""
 }
