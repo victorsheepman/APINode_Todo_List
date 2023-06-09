@@ -4,7 +4,7 @@ const cors = require('cors')
 let bodyParser = require('body-parser')
 const app = express()
 // eslint-disable-next-line no-undef
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT
 const {dbConect} = require('./config/mongo')
 const unknownEndpoint =require('./app/middleware/unknownEndPoint')
 
@@ -15,10 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors())
 app.use('/api/1.0', require('./app/routes'))
 app.use(unknownEndpoint)
-app.use('/', (req, res)=>{
-	res.send('hello world')
-})
 dbConect().then(()=>console.log('holaDB')).catch(err=>console.log(err))
-app.listen(PORT, '0.0.0.0', ()=>{
-	console.log('Api lista')
+app.listen(PORT, ()=>{
+	console.log('Api lista', PORT)
 })
